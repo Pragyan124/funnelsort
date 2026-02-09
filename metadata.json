@@ -1,0 +1,5 @@
+{
+  "name": "Funnel Sort Visualizer",
+  "description": "An interactive, high-fidelity visualizer for the cache-oblivious Funnel Sort algorithm, featuring recursive tree structures, buffer management animations, and AI-powered algorithmic insights.",
+  "requestFramePermissions": []
+}
