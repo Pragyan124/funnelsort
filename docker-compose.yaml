@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  visualizer:
+    image: nginx:alpine
+    container_name: funnel-sort-visualizer
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/usr/share/nginx/html:ro
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "80"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+networks:
+  default:
+    name: funnel-sort-network
